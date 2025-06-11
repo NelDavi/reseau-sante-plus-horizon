@@ -1,10 +1,48 @@
 
+import { useState } from 'react';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useContactForm } from '@/hooks/useContactForm';
 
 const ContactSection = () => {
+  const { isSubmitting, submitContactForm } = useContactForm();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const result = await submitContactForm(formData);
+    
+    if (result.success) {
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        phone: '',
+        message: ''
+      });
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,19 +65,31 @@ const ContactSection = () => {
                 Envoyez-nous un message
               </h3>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Nom *
                     </label>
-                    <Input placeholder="Votre nom" />
+                    <Input 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      placeholder="Votre nom" 
+                      required
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Prénom *
                     </label>
-                    <Input placeholder="Votre prénom" />
+                    <Input 
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      placeholder="Votre prénom" 
+                      required
+                    />
                   </div>
                 </div>
 
@@ -47,21 +97,38 @@ const ContactSection = () => {
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Email *
                   </label>
-                  <Input type="email" placeholder="votre.email@exemple.com" />
+                  <Input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="votre.email@exemple.com" 
+                    required
+                  />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Entreprise
                   </label>
-                  <Input placeholder="Nom de votre entreprise" />
+                  <Input 
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    placeholder="Nom de votre entreprise" 
+                  />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Téléphone
                   </label>
-                  <Input placeholder="+241 XX XX XX XX" />
+                  <Input 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    placeholder="+241 XX XX XX XX" 
+                  />
                 </div>
 
                 <div>
@@ -69,13 +136,21 @@ const ContactSection = () => {
                     Message *
                   </label>
                   <Textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Décrivez votre projet ou posez vos questions..."
                     rows={4}
+                    required
                   />
                 </div>
 
-                <Button className="w-full gradient-green text-white">
-                  Envoyer le message
+                <Button 
+                  type="submit" 
+                  className="w-full gradient-green text-white"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
                 </Button>
               </form>
             </div>
