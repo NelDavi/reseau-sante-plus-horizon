@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar with contact info */}
-      <div className="bg-health-green-600 text-white">
+      <div className="bg-medical-blue-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-2 text-sm">
             <div className="flex items-center space-x-4">
@@ -43,7 +43,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-health-green-500 to-forest-green-600 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-medical-blue-600 to-accent-teal-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">R+</span>
               </div>
               <span className="text-xl font-bold text-gradient">Réseau Santé +</span>
@@ -57,7 +57,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-gray-700 hover:text-health-green-600 font-medium transition-colors duration-200"
+                  className="text-trust-blue-700 hover:text-medical-blue-600 font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </Link>
@@ -65,7 +65,7 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-health-green-600 font-medium transition-colors duration-200"
+                  className="text-trust-blue-700 hover:text-medical-blue-600 font-medium transition-colors duration-200"
                 >
                   {item.name}
                 </a>
@@ -76,7 +76,7 @@ const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:block">
             <Link to="/espace-entreprise">
-              <Button className="gradient-green text-white hover:opacity-90 transition-opacity">
+              <Button className="gradient-medical text-white hover:opacity-90 transition-opacity">
                 Demander un devis
               </Button>
             </Link>
@@ -86,7 +86,7 @@ const Header = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-health-green-600"
+              className="text-trust-blue-700 hover:text-medical-blue-600"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -102,7 +102,7 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.href}
-                    className="block px-3 py-2 text-gray-700 hover:text-health-green-600 font-medium"
+                    className="block px-3 py-2 text-trust-blue-700 hover:text-medical-blue-600 font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -111,7 +111,7 @@ const Header = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="block px-3 py-2 text-gray-700 hover:text-health-green-600 font-medium"
+                    className="block px-3 py-2 text-trust-blue-700 hover:text-medical-blue-600 font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
@@ -120,7 +120,7 @@ const Header = () => {
               ))}
               <div className="px-3 py-2">
                 <Link to="/espace-entreprise">
-                  <Button className="w-full gradient-green text-white">
+                  <Button className="w-full gradient-medical text-white">
                     Demander un devis
                   </Button>
                 </Link>

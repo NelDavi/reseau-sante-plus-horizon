@@ -8,81 +8,81 @@
 @layer base {
   :root {
     --background: 255 255 255;
-    --foreground: 14 83 45;
+    --foreground: 15 23 42;
 
     --card: 255 255 255;
-    --card-foreground: 14 83 45;
+    --card-foreground: 15 23 42;
 
     --popover: 255 255 255;
-    --popover-foreground: 14 83 45;
+    --popover-foreground: 15 23 42;
 
-    --primary: 21 128 61;
-    --primary-foreground: 240 253 244;
+    --primary: 2 132 199;
+    --primary-foreground: 248 250 252;
 
-    --secondary: 220 252 231;
-    --secondary-foreground: 14 83 45;
+    --secondary: 241 245 249;
+    --secondary-foreground: 15 23 42;
 
-    --muted: 240 253 244;
-    --muted-foreground: 107 114 128;
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
 
-    --accent: 134 239 172;
-    --accent-foreground: 14 83 45;
+    --accent: 20 184 166;
+    --accent-foreground: 15 23 42;
 
     --destructive: 239 68 68;
     --destructive-foreground: 248 250 252;
 
-    --border: 229 231 235;
-    --input: 229 231 235;
-    --ring: 21 128 61;
+    --border: 226 232 240;
+    --input: 226 232 240;
+    --ring: 2 132 199;
 
     --radius: 0.5rem;
 
     --sidebar-background: 255 255 255;
-    --sidebar-foreground: 14 83 45;
-    --sidebar-primary: 21 128 61;
-    --sidebar-primary-foreground: 240 253 244;
-    --sidebar-accent: 240 253 244;
-    --sidebar-accent-foreground: 14 83 45;
-    --sidebar-border: 229 231 235;
-    --sidebar-ring: 21 128 61;
+    --sidebar-foreground: 15 23 42;
+    --sidebar-primary: 2 132 199;
+    --sidebar-primary-foreground: 248 250 252;
+    --sidebar-accent: 241 245 249;
+    --sidebar-accent-foreground: 15 23 42;
+    --sidebar-border: 226 232 240;
+    --sidebar-ring: 2 132 199;
   }
 
   .dark {
-    --background: 14 83 45;
-    --foreground: 240 253 244;
+    --background: 15 23 42;
+    --foreground: 248 250 252;
 
-    --card: 14 83 45;
-    --card-foreground: 240 253 244;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
 
-    --popover: 14 83 45;
-    --popover-foreground: 240 253 244;
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
 
-    --primary: 240 253 244;
-    --primary-foreground: 14 83 45;
+    --primary: 56 189 248;
+    --primary-foreground: 15 23 42;
 
-    --secondary: 22 101 52;
-    --secondary-foreground: 240 253 244;
+    --secondary: 51 65 85;
+    --secondary-foreground: 248 250 252;
 
-    --muted: 22 101 52;
-    --muted-foreground: 156 163 175;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
 
-    --accent: 22 101 52;
-    --accent-foreground: 240 253 244;
+    --accent: 45 212 191;
+    --accent-foreground: 15 23 42;
 
     --destructive: 153 27 27;
-    --destructive-foreground: 240 253 244;
+    --destructive-foreground: 248 250 252;
 
-    --border: 22 101 52;
-    --input: 22 101 52;
-    --ring: 134 239 172;
-    --sidebar-background: 14 83 45;
-    --sidebar-foreground: 240 253 244;
-    --sidebar-primary: 134 239 172;
-    --sidebar-primary-foreground: 14 83 45;
-    --sidebar-accent: 22 101 52;
-    --sidebar-accent-foreground: 240 253 244;
-    --sidebar-border: 22 101 52;
-    --sidebar-ring: 134 239 172;
+    --border: 51 65 85;
+    --input: 51 65 85;
+    --ring: 56 189 248;
+    --sidebar-background: 15 23 42;
+    --sidebar-foreground: 248 250 252;
+    --sidebar-primary: 56 189 248;
+    --sidebar-primary-foreground: 15 23 42;
+    --sidebar-accent: 51 65 85;
+    --sidebar-accent-foreground: 248 250 252;
+    --sidebar-border: 51 65 85;
+    --sidebar-ring: 56 189 248;
   }
 }
 
@@ -98,16 +98,27 @@
 }
 
 @layer components {
-  .gradient-green {
-    background: linear-gradient(135deg, theme(colors.health-green.500) 0%, theme(colors.forest-green.600) 100%);
+  .gradient-medical {
+    background: linear-gradient(135deg, theme(colors.medical-blue.600) 0%, theme(colors.medical-blue.700) 100%);
   }
   
-  .gradient-green-light {
-    background: linear-gradient(135deg, theme(colors.health-green.50) 0%, theme(colors.forest-green.100) 100%);
+  .gradient-trust {
+    background: linear-gradient(135deg, theme(colors.trust-blue.500) 0%, theme(colors.trust-blue.600) 100%);
+  }
+  
+  .gradient-light {
+    background: linear-gradient(135deg, theme(colors.medical-blue.50) 0%, theme(colors.trust-blue.50) 100%);
   }
   
   .text-gradient {
-    background: linear-gradient(135deg, theme(colors.health-green.600) 0%, theme(colors.forest-green.700) 100%);
+    background: linear-gradient(135deg, theme(colors.medical-blue.600) 0%, theme(colors.trust-blue.700) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, theme(colors.accent-teal.600) 0%, theme(colors.medical-blue.600) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

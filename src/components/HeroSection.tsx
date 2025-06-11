@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section id="accueil" className="relative min-h-screen flex items-center">
       {/* Background gradient */}
-      <div className="absolute inset-0 gradient-green opacity-95"></div>
+      <div className="absolute inset-0 gradient-medical opacity-95"></div>
       
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
@@ -22,22 +22,22 @@ const HeroSection = () => {
           <div className="text-white animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Réseau Santé +
-              <span className="block text-health-green-200">
+              <span className="block text-medical-blue-200">
                 Partout à vos côtés
               </span>
             </h1>
             
-            <p className="text-xl text-health-green-100 mb-8 leading-relaxed">
+            <p className="text-xl text-medical-blue-100 mb-8 leading-relaxed">
               Un réseau de santé gabonaise innovante, alliant proximité et modernité, 
               avec pour ambition de démocratiser l'accès aux soins de qualité sur 
               l'ensemble du territoire national.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="bg-white text-health-green-600 hover:bg-health-green-50">
+              <Button size="lg" className="bg-white text-medical-blue-600 hover:bg-medical-blue-50">
                 Découvrir notre mission
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-health-green-600">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-medical-blue-600">
                 Devenir partenaire
               </Button>
             </div>
@@ -50,7 +50,7 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">Proximité</h3>
-                  <p className="text-health-green-200 text-sm">À vos côtés</p>
+                  <p className="text-medical-blue-200 text-sm">À vos côtés</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -59,7 +59,7 @@ const HeroSection = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">Innovation</h3>
-                  <p className="text-health-green-200 text-sm">Technologie moderne</p>
+                  <p className="text-medical-blue-200 text-sm">Technologie moderne</p>
                 </div>
               </div>
             </div>
@@ -69,24 +69,24 @@ const HeroSection = () => {
           <div className="relative animate-slide-in">
             <div className="relative z-10 bg-white rounded-2xl p-8 shadow-2xl">
               <div className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-health-green-500 to-forest-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-medical-blue-600 to-accent-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="h-8 w-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-trust-blue-900 mb-2">
                   Déjà plus de 50 entreprises partenaires
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="text-trust-blue-600 mb-6">
                   Rejoignez le réseau qui prend soin de vos employés
                 </p>
-                <Button className="gradient-green text-white">
+                <Button className="gradient-medical text-white">
                   Nous contacter
                 </Button>
               </div>
             </div>
             
             {/* Floating elements */}
-            <div className="absolute -top-6 -right-6 w-20 h-20 bg-health-green-200 rounded-full opacity-60"></div>
-            <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-forest-green-300 rounded-full opacity-60"></div>
+            <div className="absolute -top-6 -right-6 w-20 h-20 bg-medical-blue-200 rounded-full opacity-60"></div>
+            <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-accent-teal-300 rounded-full opacity-60"></div>
           </div>
         </div>
       </div>
