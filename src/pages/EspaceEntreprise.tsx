@@ -80,13 +80,13 @@ const EspaceEntreprise = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-green text-white py-16">
+      <section className="gradient-medical text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Espace Entreprise
             </h1>
-            <p className="text-xl text-green-100 max-w-3xl mx-auto">
+            <p className="text-xl text-medical-blue-100 max-w-3xl mx-auto">
               Offrez à vos employés une couverture santé de qualité. 
               Découvrez nos solutions adaptées aux PME gabonaises.
             </p>
@@ -101,7 +101,7 @@ const EspaceEntreprise = () => {
             <h2 className="text-3xl font-bold text-gradient mb-4">
               Pourquoi offrir un réseau santé à vos employés ?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Un investissement social et stratégique pour la croissance de votre entreprise.
             </p>
           </div>
@@ -110,7 +110,7 @@ const EspaceEntreprise = () => {
             {advantages.map((advantage, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
-                  <div className="w-16 h-16 gradient-green rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 gradient-medical rounded-full flex items-center justify-center mx-auto mb-4">
                     <advantage.icon className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-xl">
@@ -118,7 +118,7 @@ const EspaceEntreprise = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-muted-foreground">
                     {advantage.description}
                   </p>
                 </CardContent>
@@ -129,13 +129,13 @@ const EspaceEntreprise = () => {
       </section>
 
       {/* Processus de souscription */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gradient mb-4">
               Modalités de souscription
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Un processus simple et sécurisé, adapté à votre organisation.
             </p>
           </div>
@@ -144,20 +144,20 @@ const EspaceEntreprise = () => {
             {subscriptionSteps.map((step, index) => (
               <div key={index} className="relative">
                 <div className="text-center">
-                  <div className="w-16 h-16 gradient-green rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 gradient-medical rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-white">{step.number}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-muted-foreground text-sm">
                     {step.description}
                   </p>
                 </div>
                 
                 {index < subscriptionSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-8 left-full w-full">
-                    <div className="w-full h-0.5 bg-health-green-300"></div>
+                    <div className="w-full h-0.5 bg-border"></div>
                   </div>
                 )}
               </div>
@@ -173,7 +173,7 @@ const EspaceEntreprise = () => {
             <h2 className="text-3xl font-bold text-gradient mb-4">
               Demander un devis personnalisé
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-muted-foreground">
               Obtenez une estimation gratuite adaptée aux besoins de votre entreprise.
             </p>
           </div>
@@ -183,7 +183,7 @@ const EspaceEntreprise = () => {
               <CardTitle className="text-center text-2xl">
                 Formulaire de demande de devis
               </CardTitle>
-              <div className="flex items-center justify-center gap-2 text-health-green-600">
+              <div className="flex items-center justify-center gap-2 text-primary">
                 <Clock className="h-4 w-4" />
                 <span className="text-sm font-medium">Réponse sous 48 heures ouvrées</span>
               </div>
@@ -193,7 +193,7 @@ const EspaceEntreprise = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Nom de l'entreprise *
                     </label>
                     <Input
@@ -206,14 +206,14 @@ const EspaceEntreprise = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Nombre d'employés à couvrir *
                     </label>
                     <select
                       name="employeeCount"
                       value={formData.employeeCount}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                      className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                       required
                     >
                       <option value="">Sélectionner</option>
@@ -228,7 +228,7 @@ const EspaceEntreprise = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Nom du contact *
                     </label>
                     <Input
@@ -241,7 +241,7 @@ const EspaceEntreprise = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Email *
                     </label>
                     <Input
@@ -257,7 +257,7 @@ const EspaceEntreprise = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Téléphone *
                     </label>
                     <Input
@@ -270,14 +270,14 @@ const EspaceEntreprise = () => {
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Niveau de couverture souhaité
                     </label>
                     <select
                       name="coverageLevel"
                       value={formData.coverageLevel}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                      className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground"
                     >
                       <option value="">Sélectionner</option>
                       <option value="essentiel">Essentiel</option>
@@ -288,7 +288,7 @@ const EspaceEntreprise = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-foreground mb-2">
                     Message complémentaire
                   </label>
                   <Textarea
@@ -300,7 +300,7 @@ const EspaceEntreprise = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full gradient-green text-white text-lg py-3">
+                <Button type="submit" className="w-full text-lg py-3">
                   Envoyer ma demande de devis
                 </Button>
               </form>
@@ -310,21 +310,21 @@ const EspaceEntreprise = () => {
       </section>
 
       {/* Contact rapide */}
-      <section className="py-16 bg-gradient-green text-white">
+      <section className="py-16 gradient-medical text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Besoin d'informations immédiates ?
           </h2>
-          <p className="text-xl text-green-100 mb-8">
+          <p className="text-xl text-medical-blue-100 mb-8">
             Notre équipe commerciale est à votre disposition pour répondre à toutes vos questions.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-health-green-600 hover:bg-gray-100">
+            <Button className="bg-white text-primary hover:bg-white/90">
               <Phone className="h-4 w-4 mr-2" />
               Appeler : +241 76364087
             </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-health-green-600">
+            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
               <Mail className="h-4 w-4 mr-2" />
               Email : Réseausanté+infos@gmail.com
             </Button>

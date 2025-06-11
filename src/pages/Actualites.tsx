@@ -68,13 +68,13 @@ const Actualites = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-green text-white py-16">
+      <section className="gradient-medical text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Actualités Santé
             </h1>
-            <p className="text-xl text-green-100 max-w-3xl mx-auto">
+            <p className="text-xl text-medical-blue-100 max-w-3xl mx-auto">
               Restez informés sur les enjeux de santé publique, 
               découvrez nos conseils de prévention et suivez l'actualité 
               du Réseau Santé +.
@@ -84,7 +84,7 @@ const Actualites = () => {
       </section>
 
       {/* Categories Filter */}
-      <section className="py-8 bg-gray-50">
+      <section className="py-8 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-4 justify-center">
             {categories.map((category) => (
@@ -92,7 +92,6 @@ const Actualites = () => {
                 key={category.id}
                 variant={selectedCategory === category.id ? "default" : "outline"}
                 onClick={() => setSelectedCategory(category.id)}
-                className={selectedCategory === category.id ? "gradient-green text-white" : ""}
               >
                 {category.name}
               </Button>
@@ -107,7 +106,7 @@ const Actualites = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.map((article) => (
               <Card key={article.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                <div className="aspect-video bg-gray-200 overflow-hidden">
+                <div className="aspect-video bg-muted overflow-hidden">
                   <img 
                     src={article.image} 
                     alt={article.title}
@@ -116,8 +115,8 @@ const Actualites = () => {
                 </div>
                 
                 <CardHeader>
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-2">
-                    <span className="bg-health-green-100 text-health-green-700 px-2 py-1 rounded-full text-xs font-medium">
+                  <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
+                    <span className="bg-medical-blue-100 text-medical-blue-700 px-2 py-1 rounded-full text-xs font-medium">
                       {article.category}
                     </span>
                     <div className="flex items-center gap-1">
@@ -126,30 +125,30 @@ const Actualites = () => {
                     </div>
                   </div>
                   
-                  <CardTitle className="text-xl hover:text-health-green-600 transition-colors cursor-pointer">
+                  <CardTitle className="text-xl hover:text-primary transition-colors cursor-pointer">
                     {article.title}
                   </CardTitle>
                 </CardHeader>
 
                 <CardContent>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
+                  <p className="text-muted-foreground mb-4 line-clamp-3">
                     {article.excerpt}
                   </p>
                   
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <User className="h-4 w-4" />
                       <span>{article.author}</span>
                     </div>
                     
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Calendar className="h-4 w-4" />
                       <span>{new Date(article.date).toLocaleDateString('fr-FR')}</span>
                     </div>
                   </div>
                   
                   <div className="flex items-center justify-between mt-4">
-                    <Button variant="ghost" className="text-health-green-600 hover:text-health-green-700 p-0">
+                    <Button variant="ghost" className="text-primary hover:text-primary/80 p-0">
                       Lire la suite <ArrowRight className="h-4 w-4 ml-1" />
                     </Button>
                     
@@ -165,12 +164,12 @@ const Actualites = () => {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 bg-gradient-green text-white">
+      <section className="py-16 gradient-medical text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Restez informés
           </h2>
-          <p className="text-xl text-green-100 mb-8">
+          <p className="text-xl text-medical-blue-100 mb-8">
             Abonnez-vous à notre newsletter pour recevoir nos derniers articles 
             et conseils santé directement dans votre boîte mail.
           </p>
@@ -178,9 +177,9 @@ const Actualites = () => {
             <input
               type="email"
               placeholder="Votre adresse email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900"
+              className="flex-1 px-4 py-3 rounded-lg text-foreground bg-background"
             />
-            <Button className="bg-white text-health-green-600 hover:bg-gray-100">
+            <Button className="bg-white text-primary hover:bg-white/90">
               S'abonner
             </Button>
           </div>
