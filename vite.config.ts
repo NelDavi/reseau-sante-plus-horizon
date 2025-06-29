@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  base:'https://github.com/NelDavi/reseau-sante-plus-horizon.git',
   plugins: [
     react(),
     mode === 'development' &&
